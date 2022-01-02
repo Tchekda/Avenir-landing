@@ -659,8 +659,8 @@ input[type="checkbox"] {
 }
 
 .navbar-custom .navbar-brand.logo-image img {
-  width: 6.7rem;
-  height: 6.7rem;
+  width: 4rem;
+  height: 4rem;
 }
 
 .navbar-custom .navbar-brand.logo-text {
@@ -1176,7 +1176,7 @@ input[type="checkbox"] {
 .slider {
   padding-top: 8rem;
   padding-bottom: 8rem;
-  background-color: #e8eff6;
+  background-color: #f7fafd;
 }
 
 .slider .slider-container {
@@ -1219,7 +1219,7 @@ input[type="checkbox"] {
 .cards-2 {
   padding-top: 7rem;
   padding-bottom: 3rem;
-  background-color: #f7fafd;
+  background-color: #e8eff6;
   text-align: center;
 }
 
@@ -1953,7 +1953,7 @@ a:hover.back-to-top {
   /* Header */
   .header .image-container {
     width: 58.0625rem;
-    height: 36.125rem;
+    /* height: 36.125rem; */
     margin-right: auto;
     margin-left: auto;
   }
@@ -2052,7 +2052,8 @@ a:hover.back-to-top {
 
   .basic-2 img {
     width: 18.75rem;
-    height: 39.8125rem;
+    /* height: 39.8125rem; */
+    margin-top: 50%;
   }
   /* end of features */
 
@@ -2179,6 +2180,10 @@ a:hover.back-to-top {
 
   .ex-basic-2 .image-container-small {
     margin-left: 1.75rem;
+  }
+
+  #about-project {
+    max-width: 33%;
   }
   /* end of extra pages */
 }
