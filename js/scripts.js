@@ -29,7 +29,7 @@
         $('#price-base-student').text(`${baseStudentPrice.toFixed(2)} €`);
         $('#price-student-ecole-directe').text(`${ecoleDirectPrice.toFixed(2)} €`);
         $('#price-student-reminder').text(`${reminderPrice.toFixed(2)} €`);
-        $('#price-per-student').text(`${pricePerStudent.toFixed(2)} €`);
+        $('.price-per-student').text(`${pricePerStudent.toFixed(2)} €`);
         $('#price-first-year').text(`${totalFirstPrice.toFixed(2)} €`);
         $('#price-second-year').text(`${totalSecondPrice.toFixed(2)} €`);
   }
