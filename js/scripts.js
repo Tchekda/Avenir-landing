@@ -6,9 +6,54 @@
 
 (function ($) {
   "use strict";
+  // Price form
+  const calculatePrice = () => {
+    const ecoleDirect = $('input#price-ecole-directe').is(':checked'),
+              reminder = $('input#price-reminders').is(':checked'),
+              students = parseInt($('input#price-students').val()),
+              entryPrice = 5000,
+              baseStudentPrice = 2,
+              ecoleDirectPrice = 1,
+              reminderPrice = 0.5
+              ;
+        
+        let pricePerStudent = 2;
+        if (ecoleDirect) pricePerStudent += 1;
+        if (reminder) pricePerStudent += 0.5;
+
+        const totalFirstPrice = entryPrice + pricePerStudent * students,
+              totalSecondPrice = pricePerStudent * students;
+
+        $('#price-student-count').text(students);
+        $('.price-base-price').text(`${entryPrice.toFixed(2)} €`);
+        $('#price-base-student').text(`${baseStudentPrice.toFixed(2)} €`);
+        $('#price-student-ecole-directe').text(`${ecoleDirectPrice.toFixed(2)} €`);
+        $('#price-student-reminder').text(`${reminderPrice.toFixed(2)} €`);
+        $('#price-per-student').text(`${pricePerStudent.toFixed(2)} €`);
+        $('#price-first-year').text(`${totalFirstPrice.toFixed(2)} €`);
+        $('#price-second-year').text(`${totalSecondPrice.toFixed(2)} €`);
+  }
+
+  
+  $("#priceForm")
+    .on("input", function() {
+        calculatePrice()
+    })
+
+
   // Email JS
   emailjs.init("user_S4GkrC97lNnQVQomJL9Sq");
-  window.onload = function () {
+
+  /* Preloader */
+  $(window).on("load", function () {
+    var preloaderFadeOutTime = 250;
+    function hidePreloader() {
+      var preloader = $(".spinner-wrapper");
+      setTimeout(function () {
+        preloader.fadeOut(preloaderFadeOutTime);
+      }, 500);
+    }
+    hidePreloader();
     document
       .getElementById("contact_form")
       .addEventListener("submit", function (event) {
@@ -23,18 +68,8 @@
           alert("Vérification anti-robot échouée");
         }
       });
-  };
 
-  /* Preloader */
-  $(window).on("load", function () {
-    var preloaderFadeOutTime = 500;
-    function hidePreloader() {
-      var preloader = $(".spinner-wrapper");
-      setTimeout(function () {
-        preloader.fadeOut(preloaderFadeOutTime);
-      }, 500);
-    }
-    hidePreloader();
+    calculatePrice()
   });
 
   /* Navbar Scripts */
@@ -202,4 +237,6 @@
   $(".button, a, button").mouseup(function () {
     $(this).blur();
   });
+
+;
 })(jQuery);

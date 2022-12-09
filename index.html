@@ -7,17 +7,19 @@
 
     <!-- SEO Meta Tags -->
     <meta name="description"
-        content="Avenir est une plateforme pour les lycées dans le but de dématérialiser les fiches de voeux papier" />
+        content="Avenir est une plateforme pour les lycées dans le but de dématérialiser la fiche navette papier" />
     <meta name="author" content="Tchekda" />
+
+    <meta name="robots" content="index, follow"/> 
 
     <!-- OG Meta Tags to improve the way the post looks when you share the page on LinkedIn, Facebook, Google+ -->
     <meta property="og:site_name" content="Avenir - Fiche 'Navette' Numérique" />
     <!-- website name -->
     <meta property="og:site" content="https://lycee.tchekda.fr" />
     <!-- website link -->
-    <meta property="og:title" content="Avenir - Fiche 'Navette' Numérique" />
+    <meta property="og:title" content="Avenir - Fiche 'Navette' Numérique pour le Lycée" />
     <!-- title shown in the actual shared post -->
-    <meta property="og:description" content="Présentation de la plateforme Avenir, fiche 'navette' numérique" />
+    <meta property="og:description" content="Présentation de la plateforme Avenir, fiche 'navette' numérique faite pour le lycée" />
     <!-- description shown in the actual shared post -->
     <meta property="og:image" content="https://lycee.tchekda.fr/images/logo.png" />
     <!-- image link, make sure it's jpg -->
@@ -82,6 +84,9 @@
                     <li class="nav-item">
                         <a class="nav-link page-scroll" href="#data">CHIFFRES</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="#prices">PRIX</a>
+                    </li>
 
                     <!-- Dropdown Menu -->
                     <li class="nav-item dropdown">
@@ -97,7 +102,7 @@
                             <a class="dropdown-item popup-with-move-anim" href="#description-1-details-lightbox"><span
                                     class="item-text">Informations Techniques</span></a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" target="_blank"
+                            <a class="dropdown-item" rel="noopener" target="_blank"
                                 href="http://files.tchekda.fr/Presentation_Avenir.pptx">
                                 <span class="item-text">Présentation PPT</span></a>
                         </div>
@@ -574,6 +579,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
+                    <h3>Statistiques</h3>
                     <!-- Counter -->
                     <div id="counter">
                         <div class="cell">
@@ -604,13 +610,94 @@
                 </div>
                 <!-- end of col -->
             </div>
+
+        </div>
+    </div>
+    <div class="prices" id="prices">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h3>Prix</h3>
+                    <p>Voici un petit simulateur de prix pour avoir une idée générale. Pour toute demande spécifique veuillez me contacter pour en discuter</p>
+                    <form id="priceForm">
+                        <div class="priceFormSection">
+                            <h4>Options obligatoires : </h4>
+                            <div class="price-form-entry">
+                                <label class="form-check-label">
+                                    <input type="checkbox" class="form-check-input" checked disabled>Fonctionnalités essentielles
+                                </label>
+                                <p>À payer 1 fois : <strong class="price-base-price"></strong></p>
+                            </div>
+                            <div class="price-form-entry">
+                                <label class="form-check-label">
+                                    <input type="checkbox" class="form-check-input" checked disabled>Maintenance, suivi et support
+                                </label>
+                                <p>Prix / élève / an : <strong id="price-base-student"></strong></p>
+                            </div>
+                        </div>
+                        <hr />
+                        <div class="priceFormSection">
+                            <h4>Options facultatives : </h4>
+                            <div class="price-form-entry">
+                                <label class="form-check-label">
+                                    <input id="price-ecole-directe" type="checkbox" class="form-check-input" checked>Connexion avec EcoleDirecte
+                                </label>
+                                <p>Prix / élève / an : <strong id="price-student-ecole-directe"></strong></p>
+                            </div>
+                            <div class="price-form-entry">
+                                <label class="form-check-label">
+                                    <input id="price-reminders" type="checkbox" class="form-check-input" checked>Mails de rappels
+                                </label>
+                                <p>Prix / élève / an : <strong id="price-student-reminder"></strong></p>
+                            </div>
+                        </div>
+                        <hr />
+                        <div class="priceFormSection">
+                            <h4>Configuration</h4>
+                            <div class="price-form-entry">
+                                <label for="formControlRange">Élèves : <strong id="price-student-count"></strong></label>
+                                <input id="price-students" type="range" class="form-control-range" 
+                                        min="100" max="3000" step="100" value="900">
+                            </div>
+                        </div>
+                        <hr />
+                        <div class="priceFormSection">
+                            <h4>Total la première année</h4>
+                            <div class="price-form-entry">
+                                <p>Prix "d'entrée" : </p>
+                                <strong class="price-base-price"></strong>
+                            </div> 
+                            <div class="price-form-entry">
+                                <p>Prix / élève / an : </p>
+                                <strong id="price-per-student"></strong>
+                            </div> 
+                            <div class="price-form-entry">
+                                <p>Total : </p>
+                                <strong id="price-first-year"></strong>
+                            </div> 
+                        </div>
+                        <hr />
+                        <div class="priceFormSection">
+                            <h4>Total les années suivantes</h4>
+                            <div class="price-form-entry">
+                                <p>Prix / élève / an : </p>
+                                <strong id="price-per-student"></strong>
+                            </div> 
+                            <div class="price-form-entry">
+                                <p>Total : </p>
+                                <strong id="price-second-year"></strong>
+                            </div> 
+                        </div>
+                    </form>
+                </div>
+                <!-- end of col -->
+            </div>
             <!-- end of row -->
         </div>
         <!-- end of container -->
     </div>
     <!-- end of counter -->
     <!-- end of statistics -->
-
 
     <!-- Screenshots -->
     <div id="screens" class="slider">
@@ -879,7 +966,7 @@
                         <li class="media">
                             <i class="fas fa-link"></i>
                             <div class="media-body">
-                                <a href="https://tchekda.fr" target="_blank">tchekda.fr</a>
+                                <a href="https://tchekda.fr" rel="noopener" target="_blank">tchekda.fr</a>
                             </div>
                         </li>
                     </ul>
@@ -887,19 +974,19 @@
                 <!-- end of footer-col -->
                 <div>
                     <span class="fa-stack">
-                        <a href="https://github.com/Tchekda" target="_blank">
+                        <a href="https://github.com/Tchekda" rel="noopener" target="_blank">
                             <i class="fas fa-circle fa-stack-2x"></i>
                             <i class="fab fa-github fa-stack-1x"></i>
                         </a>
                     </span>
                     <span class="fa-stack">
-                        <a href="https://twitter.com/DavidTchekachev" target="_blank">
+                        <a href="https://twitter.com/DavidTchekachev" rel="noopener" target="_blank">
                             <i class="fas fa-circle fa-stack-2x"></i>
                             <i class="fab fa-twitter fa-stack-1x"></i>
                         </a>
                     </span>
                     <span class="fa-stack">
-                        <a href="https://www.linkedin.com/in/david-tchekachev/" target="_blank">
+                        <a href="https://www.linkedin.com/in/david-tchekachev/" rel="noopener" target="_blank">
                             <i class="fas fa-circle fa-stack-2x"></i>
                             <i class="fab fa-linkedin-in fa-stack-1x"></i>
                         </a>

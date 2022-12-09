@@ -1331,6 +1331,31 @@ input[type="checkbox"] {
   vertical-align: middle;
 }
 
+.prices { 
+  padding-top: 8rem;
+  padding-bottom: 5rem;
+  text-align: center;
+}
+
+.prices p, .prices label, .prices strong {
+  color: black;
+}
+
+.price-form-entry {
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+  margin: 0 auto;
+}
+
+.price-form-entry .form-control-range {
+  width: 60% !important;
+}
+
+.priceFormSection {
+  margin: 17px 0;
+}
+
 /************************/
 /*     13. Download     */
 /************************/
